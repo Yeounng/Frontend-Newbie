@@ -15,16 +15,7 @@ body {
 
 div {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-li {
-  padding-inline-start: 20px;
-  line-height: 2.5;
-}
-
-li::marker {
-  color: maroon;
+          box-sizing: border-box;
 }
 
 .attribution {
@@ -32,69 +23,20 @@ li::marker {
   text-align: center;
 }
 
-.main-title {
-  font-size: 34px;
-}
-
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
-.section {
-  width: 768px;
-  margin: 60px auto 0 auto;
-  padding: 30px;
+.seciton {
+  width: 1080px;
+  margin: 0 auto 0 auto;
   background-color: white;
+}
+
+.section main {
   border-radius: 15px;
 }
 
 .main-image {
-  width: 100%;
-  border-radius: 15px;
-}
-
-.title {
-  font-size: 22px;
-  color: maroon;
-}
-
-.prep {
-  padding: 30px;
-  padding-bottom: 10px;
-  border-radius: 15px;
-  background-color: #fff7fc;
-}
-
-.prep .title {
-  margin: 0;
-}
-
-.ingredients {
-  border-bottom: 2px solid #eee;
-}
-
-.instruct {
-  border-bottom: 2px solid #eee;
-}
-
-.instruct li {
-  line-height: 1.8;
-  margin-bottom: 10px;
-}
-
-.nutrition table {
-  width: 100%;
-  text-align: left;
-  border-collapse: collapse;
-}
-
-.nutrition th,
-td {
-  padding: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-.nutrition td {
-  font-weight: bold;
-  color: maroon;
+  width: 500px;
 }
