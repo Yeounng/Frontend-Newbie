@@ -16,25 +16,36 @@ div {
 
 .product-container {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, 50%);
           transform: translate(-50%, 50%);
   width: 70vw;
-  max-width: 576px;
+  max-width: 768px;
   border-radius: 15px;
   -webkit-box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.3);
+  text-wrap: balance;
+  max-inline-size: 80ch;
   background-color: white;
   overflow: hidden;
 }
 
+.product-img {
+  width: 50%;
+}
+
 .product-img img {
+  content: url(../images/image-product-desktop.jpg);
   display: block;
   width: 100%;
 }
 
 .product-content {
+  width: 50%;
   padding: 30px;
 }
 
