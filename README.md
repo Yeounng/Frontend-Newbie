@@ -20,7 +20,7 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 ### Screenshot
 
-![overview](../product-preview-card-component-main/Screenshot%202025-06-11%20at%2019-05-09%20Frontend%20Mentor%20Product%20preview%20card%20component.png)
+![overview](./Screenshot%202025-06-11%20at%2019-05-09%20Frontend%20Mentor%20Product%20preview%20card%20component.png)
 
 ### Links
 
