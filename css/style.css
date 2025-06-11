@@ -42,6 +42,7 @@ div {
   content: url(../images/image-product-desktop.jpg);
   display: block;
   width: 100%;
+  height: 100%;
 }
 
 .product-content {
@@ -113,22 +114,20 @@ div {
     text-wrap: balance;
     max-inline-size: 80ch;
   }
-  .product-img {
-    content: url(../images/image-product-desktop.jpg);
-    width: 50%;
-  }
-  .product-content {
-    width: 50%;
-  }
 }
 @media screen and (max-width: 768px) {
   .product-container {
     display: block;
+    -webkit-transform: translate(-50%, 25%);
+            transform: translate(-50%, 25%);
     width: 70vw;
     max-width: 576px;
     max-inline-size: none;
   }
   .product-img {
+    width: 100%;
+  }
+  .product-img img {
     content: "";
     width: 100%;
   }
