@@ -27,7 +27,7 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
 
 ### Screenshot
 
-![]()
+![scrennshot](./Screenshot%202025-07-21%20at%2020-31-41%20Frontend%20Mentor%20Four%20card%20feature%20section.png)
 
 ### Links
 
@@ -44,8 +44,7 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
 ### What I learned
 
 - css nth 사용해보기
-- css 3d animation
-- 크게 특별한건 없었고 이전까지 해온거의 변형인데 크게 어려운점은 없었음
+- position을 적절히 활용해 기존 배치에서 틀어진 배치를 적용. 배치가 비정형이라 grid, flex 모두 애매했는듯
 
 ### Continued development
 
