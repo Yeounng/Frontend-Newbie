@@ -64,13 +64,21 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 그리드 갭을 넣을때 혹시나 박스외부에 마진이 있는지 확인하자.
 
+grid-template-row : repeat(4, 1fr) 4열(칸) 생성. 줄은 1,2,3,4,5가 생성된다.(4개의 row track과 5개의 grid line이 생성되는 것)
+
+template-row나 column을 만약 4까지만 줬어도 더 필요하면 6번째나 그 이후 줄을 선택해서 배치할 수 있다
+이 경우 자동으로 늘어나며(생성되며) grid-auto-rows나 column값에 따라 크기를 추가로 생성되는 열이나 행의 크기를 지정 할 수 있다.
+
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- 모바일 - pc 사이에 태블릿 사이즈 개발
+- scss로 color정의 mixin , nesting 등 활용하기
+- 쓸대없이 중복되거나 하는 css 정리하기 등
 
 ### Useful resources
 
 - [CSS GRID 강의](https://studiomeal.com/archives/533) - css grid
+- [CSS GRID 강의](https://www.heropy.dev/p/c6ROLZ) - css grid
 
 ## Author
 

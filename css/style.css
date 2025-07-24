@@ -8,7 +8,12 @@ body {
   margin: 0;
 }
 
-.div {
+section {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -121,125 +126,141 @@ section.media-grid-main {
   background: hsl(39, 100%, 71%);
 }
 
-@media screen and (min-width: 577px) {
+@media screen and (min-width: 992px) {
+  .media-grid-main {
+    max-width: 1200px;
+  }
   .grid-wrap {
-    width: 100%;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 2fr 2fr 1fr 2fr 2fr;
     grid-gap: 30px;
   }
   .media-box {
     margin-bottom: 0;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    letter-spacing: -0.1rem;
-    text-wrap: balance;
+    font-size: 1.7rem;
+    line-height: 0.8;
+    text-wrap: wrap;
   }
   .media-box img {
     width: 50%;
   }
   .main {
-    text-align: center;
-    background-color: hsl(256, 67%, 59%);
-    color: white;
-    grid-column: 3/7;
+    grid-column: 2/4;
     grid-row: 1/4;
-  }
-  .main h4 {
-    margin: 0 auto 0 auto;
-    font-size: 3rem;
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: normal;
-  }
-  .main p {
-    margin: 0;
-    font-weight: 200;
+    padding-top: 45px;
+    padding-bottom: 45px;
   }
   .main img {
-    margin-top: 25px;
+    width: 40%;
+    margin-bottom: 5px;
+  }
+  .main p {
+    font-size: 1.2rem;
+    letter-spacing: 0.01rem;
   }
   .sns {
-    grid-column: 3/5;
+    grid-column: 2/3;
     grid-row: 4/6;
-    background-color: #faf8fb;
-    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+  }
+  .sns h4 {
+    margin-bottom: 0;
+  }
+  .sns img {
+    width: 150%;
+    margin-bottom: 15px;
   }
   .calender {
-    grid-column: 5/7;
+    position: relative;
+    grid-column: 3/4;
     grid-row: 4/6;
-    margin: 0;
-    padding-bottom: 0;
-    background: hsl(39, 100%, 71%);
+    overflow: hidden;
   }
   .calender img {
-    display: block;
+    position: absolute;
+    width: 50%;
+    left: 0;
+    bottom: 0;
+    -webkit-transform: translate(50%, 40%) scale(1.7);
+            transform: translate(50%, 40%) scale(1.7);
   }
   .post-timings {
-    grid-column: 7/9;
+    grid-column: 4/5;
     grid-row: 1/6;
-    text-align: center;
-    background-color: hsl(254, 88%, 90%);
-  }
-  .post-timings p {
-    font-size: 1.5rem;
-    font-weight: 500;
+    padding: 30px;
+    text-align: left;
+    overflow: hidden;
   }
   .post-timings img {
-    width: 100%;
+    width: 200%;
+  }
+  .post-timings p {
+    font-size: 1rem;
+    letter-spacing: normal;
+    line-height: 1.1;
+    text-wrap: balance;
   }
   .grow {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    grid-column: 5/9;
+    grid-column: 3/5;
     grid-row: 6/8;
-    text-align: center;
-    background-color: hsl(256, 67%, 59%);
-    color: white;
+    padding: 10px;
+    text-align: left;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     font-size: 2.2rem;
   }
+  .grow h4 {
+    font-weight: 400;
+  }
   .grow img {
-    width: 50%;
+    width: 100%;
+    margin: 0 5px 0 5px;
   }
   .faster-grow {
-    grid-column: 3/5;
+    grid-column: 2/3;
     grid-row: 6/8;
-    background-color: #faf8fb;
     font-size: 1.5rem;
-    font-weight: 500;
-    text-align: center;
   }
   .faster-grow strong {
     font-size: 3rem;
   }
   .faster-grow p {
-    margin-top: 0;
-    margin-bottom: 15px;
-    text-align: left;
+    font-size: 1.1rem;
   }
   .faster-grow img {
-    width: 70%;
+    width: 85%;
   }
   .quicker {
-    grid-column: 1/3;
+    grid-column: 1/2;
     grid-row: 1/5;
+    padding-top: 60px;
+    font-size: 2.5rem;
+  }
+  .quicker h4 {
+    font-weight: 500;
+  }
+  .quicker img {
+    margin-top: 15px;
+    width: 100%;
   }
   .ai-writer {
-    grid-column: 1/3;
+    grid-column: 1/2;
     grid-row: 5/8;
-    text-align: center;
   }
   .ai-writer h4 {
+    font-size: 2rem;
+    font-weight: 500;
     text-align: left;
   }
   .ai-writer img {
-    width: 90%;
+    width: 100%;
     margin-left: 10px;
   }
 }
