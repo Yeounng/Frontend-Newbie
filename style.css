@@ -1,0 +1,235 @@
+html {
+  margin: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  background: #f5f5f5;
+  margin: 0;
+}
+
+section {
+  box-sizing: border-box;
+  background-color: hsl(210, 46%, 95%);
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.blog-article {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.blog-article .inner {
+  max-width: 1200px;
+  margin: 0 auto 0 auto;
+}
+
+.article-wrap {
+  width: 70%;
+  margin: 0 auto 0 auto;
+  display: flex;
+  border-radius: 15px;
+}
+
+.article-box-img {
+  width: 35%;
+}
+
+.article-box-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.article-content {
+  width: 65%;
+  padding: 35px;
+  padding-right: 50px;
+  background-color: white;
+}
+
+.article-title {
+  margin-top: 0;
+  color: hsl(217, 19%, 35%);
+}
+
+.article-txt {
+  color: hsl(214, 17%, 51%);
+}
+
+.article-user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  border-radius: 100%;
+}
+
+.user-img img {
+  width: 100%;
+  border-radius: 100%;
+  display: block;
+}
+
+.user-name {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: 700;
+  color: hsl(217, 19%, 35%);
+}
+
+.date {
+  margin: 0;
+  color: hsl(214, 17%, 51%);
+}
+
+.sns-share {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.share-button {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border-style: none;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.sns-share:hover .share-button {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.sns-share:hover .share-button img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(66%) saturate(17%) hue-rotate(275deg) brightness(110%) contrast(92%);
+}
+
+.share-popup {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  display: flex;
+  width: 250px;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  opacity: 0;
+  background-color: hsl(217, 19%, 35%);
+  border-radius: 7px;
+  box-shadow: 3px 3px 5px 1px grey;
+  color: hsl(210, 46%, 95%);
+  letter-spacing: 5px;
+  transition: all 0.2s ease;
+}
+
+.share-popup::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+  width: 20px;
+  height: 20px;
+  background-color: hsl(217, 19%, 35%);
+  z-index: -1;
+}
+
+.share-icons a {
+  margin-right: 15px;
+}
+
+.share-icons a:last-child {
+  margin-right: 0;
+}
+
+.share-popup.active {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+@media screen and (max-width: 996px) {
+  .article-wrap {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .article-wrap {
+    width: 80%;
+    flex-wrap: wrap;
+  }
+  .article-box-img {
+    width: 100%;
+  }
+  .article-content {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .article-wrap {
+    width: 70%;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .article-box-img {
+    width: 100%;
+  }
+  .article-content {
+    width: 100%;
+    padding: 25px;
+    padding-right: 25px;
+    background-color: white;
+  }
+  .article-user-profile {
+    position: relative;
+  }
+  .sns-share.active {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .share-popup {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translate(-50%, 100%) scale(1);
+    display: flex;
+    width: 350px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    background-color: hsl(217, 19%, 35%);
+    border-radius: 7px;
+    box-shadow: none;
+    color: hsl(210, 46%, 95%);
+    letter-spacing: 5px;
+    transition: all 0.2s ease;
+  }
+  .share-popup::after {
+    display: none;
+  }
+  .share-popup.active {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}/*# sourceMappingURL=style.css.map */
