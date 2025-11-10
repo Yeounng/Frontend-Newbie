@@ -34,3 +34,10 @@ The designs were created to the following widths:
 - Weights: 400, 700
 
 > 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma.
+
+
+color gredient
+#242742 blue
+#FD1D1D  red
+#833AB4 purple
+#FCB045 orange
