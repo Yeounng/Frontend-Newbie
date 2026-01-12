@@ -1,0 +1,180 @@
+@import url("./normalizer.css");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+$color-purple-100: hsl(275, 100%, 97%);
+$color-purple-600: hsl(292, 16%, 49%);
+$color-purple-950: hsl(292, 42%, 14%);
+
+$breakpoints: (
+  desktop-wide: 1440px,
+  desktop: 1200px,
+  tablet-wide: 980px,
+  tablet: 768px,
+  mobile-wide: 480px,
+  mobile: 375px,
+);
+
+@mixin responsive($points) {
+  @media screen and (max-width: map-get($breakpoints, $points)) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+}
+
+ul,
+ol,
+li {
+  padding-left: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/assets/images/background-pattern-desktop.svg) top no-repeat;
+  background-color: $color-purple-100; //이미지 넣어도 컬러로 나머지 채울수있구나.. 몰랐다..
+}
+
+.container {
+  max-width: 700px;
+  width: 50%;
+  height: max-content;
+  padding: 35px;
+  border-radius: 15px;
+  background-color: white;
+  transition: width 0.3s ease;
+  @include responsive(tablet-wide) {
+    width: 90%;
+  }
+}
+
+.star-icon {
+  float: left;
+  width: 48px;
+  height: 48px;
+  margin-top: 4px;
+  margin-right: 10px;
+}
+
+.faq-title {
+  margin-bottom: 30px;
+  font-size: 48px;
+}
+
+.question-list {
+  width: 100%;
+}
+
+// .question-list li {
+//   position: relative;
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+//   width: 100%;
+//   margin-bottom: 30px;
+// }
+.question-list li {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 30px;
+}
+
+.question-list li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: $color-purple-100;
+}
+
+.question-title {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: $color-purple-950;
+  transition: 0.3s ease;
+}
+.question-list li:hover > .question-title {
+  color: purple;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+}
+
+input[type="checkbox"]:focus-visible + label {
+  outline: 2px solid $color-purple-600;
+}
+
+input[type="checkbox"] + label {
+  //label 은 inline으로 background를 넣어도 텍스트 요소가 없다면 크기가 0이라 block-level로 변경
+  display: inline-block;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: url(/assets/images/icon-plus.svg) center/100% no-repeat;
+  transition: 0.2s ease;
+}
+
+input[type="checkbox"] ~ .question-text {
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  max-height: 0; //height:0 -> height:auto 같은 방식은 중간 값을 계산해야하는데 auto는 명시된 값이 없음. height 속성은 Layout(Reflow) 단계를 트리거 -> 주변 요소 위치 재계산. 성능저하
+  padding-right: 15px;
+  color: $color-purple-600;
+  transform: rotateX(-90deg);
+  transform-origin: top;
+  opacity: 0;
+  transition: 0.5s ease;
+  visibility: hidden; // 보이지 않을 때 포커스 방지
+  flex-wrap: nowrap;
+}
+
+input[type="checkbox"]:checked + label {
+  background: url(/assets/images/icon-minus.svg) center/100% no-repeat;
+}
+input[type="checkbox"]:checked ~ .question-text {
+  max-height: 300px;
+  opacity: 1;
+  transform: rotateX(0);
+  visibility: visible;
+}
+
+//input의 id와 label 의 for 가 각각 일치해야 작동하고, id는 유니크하기때문에 모두 동일하다면 제대로 작동하지 않는다.
+//각각 input 들이 서로 같은 id를 공유해서는 안됨. 필연적으로 HTML에 accordian-1 accordian-2 accordian-3식으로 하나씩다 수정해줘야 함.
+//CSS에서는 input#ID 같은 방식이 아닌 type=""으로 선택해주고 ~ 을 사용. input[type="checkbox"]:checked ~ 체크된 체크박스 뒤에오는 형제들을 제어하는 식으로 서로 ID가 달라도 일괄 적용할 수 있게 함.
+//CSS가 특히 길어지지만 속도가 매우 빠르고 JS없이 구현되기에 단순하다
